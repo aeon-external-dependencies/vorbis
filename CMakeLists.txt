@@ -15,6 +15,10 @@ if(BUILD_FRAMEWORK)
 	set(BUILD_SHARED_LIBS TRUE)
 endif()
 
+if (MSVC)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /wd4244 /wd4267 /wd4305")
+endif ()
+
 # Extract project version from configure.ac
 file(READ configure.ac CONFIGURE_AC_CONTENTS)
 string(REGEX MATCH "AC_INIT\\(\\[libvorbis\\],\\[([0-9]*).([0-9]*).([0-9]*)" DUMMY ${CONFIGURE_AC_CONTENTS})
