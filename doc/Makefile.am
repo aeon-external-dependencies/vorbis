@@ -77,7 +77,6 @@ CLEANFILES = $(SPEC_TEX:%.tex=%.aux) \
 	     Vorbis_I_spec.lg  Vorbis_I_spec.log \
 	     Vorbis_I_spec.out Vorbis_I_spec.tmp \
 	     Vorbis_I_spec.toc Vorbis_I_spec.xref \
-	     Vorbis_I_spec*.png \
 	     zzVorbis_I_spec.ps
 DISTCLEANFILES = $(built_docs)
 
@@ -107,7 +106,7 @@ doxygen-build.stamp: Doxyfile $(top_srcdir)/include/vorbis/*.h
 	touch doxygen-build.stamp
 else
 doxygen-build.stamp:
-	echo "*** Warning: Doxygen not found; documentation will not be built."
+	echo "*** Warning: Documentation build is disabled."
 	touch doxygen-build.stamp
 endif
 
